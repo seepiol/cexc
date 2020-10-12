@@ -1,0 +1,35 @@
+#!/bin/bash
+
+if [[ $1 == "-h" || $1 == "--help" || -z $1 || -z $2 || -z $3 || -z $4 ]]; then # Help
+    echo "usage: cexc [-h] {number, name, surname, class}
+Creates a number of template files of C code
+
+positional arguments:
+  {number,name,surname,class}
+    number          number of exercise files
+    name            your name
+    surname         your surname
+    class           your class (for example, 5A)
+
+optional arguments:
+  -h, --help        show this help message and exit"
+
+else
+
+    file_number=$1
+    name=$2
+    surname=$3
+    class=$4
+    file_number=$1
+    
+    for ((es_number = 1; es_number <= file_number; es_number++)); do
+        echo "// $name $surname $class - Ex. $es_number
+#include <stdio.h>
+
+main() {
+
+}
+    " > "ex$es_number.c"
+    done
+
+fi
