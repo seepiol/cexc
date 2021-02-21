@@ -1,4 +1,5 @@
 #!/bin/bash
+# C Exercise Creator - https://gitlab.com/seepiol/cexc
 
 if [[ $1 == "-h" || $1 == "--help" || -z $1 || -z $2 || -z $3 || -z $4 ]]; then # Help
     echo "usage: cexc [-h] {number, name, surname, class}
